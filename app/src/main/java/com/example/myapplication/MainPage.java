@@ -18,6 +18,7 @@ public class MainPage extends Fragment{
             LayoutInflater inflater,ViewGroup container,
             Bundle savedInstanceState
     ){
+        //Linking layout to java file
         View fFLayout = inflater.inflate(R.layout.main_pages,container,false);
         return fFLayout;
     }
