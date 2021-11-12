@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Vaidya</string>
+    <string name="second_fragment_label">Vaidya</string>
+    <string name="random_button_text">Random</string>
+    <string name="previous">Previous</string>
+    <string name="toast_button_text">Toast</string>
+    <string name="hello_first_fragment">1</string>
+    <string name="hello_second_fragment">Hello second fragment</string>
+    <string name="count_button_text">Count</string>
+    <string name="Toast_display">Toast to you too!</string>
+    <string name="logo">Logo</string>
+    <string name="Slogan">Health is the real wealth</string>
+    <string name="Button_Text">Emergency!!</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="primary_checks">Primary Checks</string>
+    <string name="Q1">1. Talk to them. Are they responding to your voice?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="Q2">2. Gently shake the person. Are they responding?</string>
+    <string name="Q3">3. Make a loud noise. Are they responding?</string>
+    <string name="Q4">4. Are they having any of the following symptoms?</string>
+    <string name="next">Next</string>
+    <string name="Q5">5. Are they breathing?</string>
+    <string name="Q6">6. Any other relevant information which you feel is important</string>
+    <string name="enter_details">Enter Details</string>
+    <string name="amnesia">Amnesia</string>
+    <string name="headache">Headache</string>
+    <string name="lightheadedness">Lightheadedness</string>
+    <string name="drowsiness">Drowsiness</string>
+    <string name="rapid_heartbeat">Rapid Heartbeat</string>
+    <string name="sign">Sign</string>
+</resources>
