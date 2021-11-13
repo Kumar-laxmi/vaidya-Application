@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "168250880385",
+    "firebase_url": "https://bansal-96b6d.firebaseio.com",
+    "project_id": "bansal-96b6d",
+    "storage_bucket": "bansal-96b6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168250880385:android:8defe7fa285a6da4b53880",
+        "android_client_info": {
+          "package_name": "com.example.Vaidya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168250880385-ibu53hau4u4oavrost2s1e72mi0f7c9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOXf4A8KMYC7bfff0u3TwOn6sFGqf2pZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168250880385-ibu53hau4u4oavrost2s1e72mi0f7c9p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
