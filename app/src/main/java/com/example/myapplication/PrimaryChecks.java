@@ -80,12 +80,13 @@ public class PrimaryChecks extends Fragment{
         DatabaseReference myRef3 = database.getReference("Question3");
         DatabaseReference myRef4 = database.getReference("Question4");
         DatabaseReference myRef5 = database.getReference("Question5");
+        DatabaseReference myRef6 = database.getReference("Responsiveness");
 
         view.findViewById(R.id.next_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavHostFragment.findNavController(PrimaryChecks.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
                 int radio1 = rg1.getCheckedRadioButtonId();
                 rb1 = (RadioButton) view.findViewById(radio1);
                 int radio2 = rg2.getCheckedRadioButtonId();
@@ -110,6 +111,11 @@ public class PrimaryChecks extends Fragment{
                 rb2.setText("");
                 myRef3.setValue(rb3.getText().toString());
                 rb3.setText("");
+                if(rb1.getText().toString()=="Yes" && rb2.getText().toString()=="Yes" && rb3.getText().toString()=="Yes")
+                    myRef6.setValue("Responsive");
+                else
+                    myRef6.setValue("Unresponsive");
+
                 myRef5.setValue(rb5.getText().toString());
                 rb5.setText("");
 

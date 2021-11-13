@@ -22,7 +22,12 @@
         tools:layout="@layout/primary_checks">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_SecondFragment_to_ThirdFragment"
+            app:destination="@id/mapsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.myapplication.MapsFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_maps" />
 </navigation>

@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,6 +75,7 @@ public class MainPage extends Fragment {
         }
     }
 
+    @SuppressLint("MissingPermission")
     private void getCurrentLocation() {
         LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
 
@@ -89,12 +91,11 @@ public class MainPage extends Fragment {
 
                     if (location != null) {
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference locla = database.getReference("Location->Latitude");
-                        locla.setValue(String.valueOf(location.getLatitude()));
-
-                        DatabaseReference loclo = database.getReference("Location->Longitude");
-                        loclo.setValue(String.valueOf(location.getLongitude()));
-                    } else {
+                        DatabaseReference loc= database.getReference("Location");
+                        loc.child("Latitude").setValue(String.valueOf(location.getLatitude()));
+                        loc.child("Longitude").setValue(String.valueOf(location.getLongitude()));
+                    }
+                    else {
                         LocationRequest locationRequest = new LocationRequest()
                                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
                                 .setInterval(10000)
@@ -107,16 +108,11 @@ public class MainPage extends Fragment {
 
                                 Location location1 = locationResult.getLastLocation();
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                                DatabaseReference locla= database.getReference("Location->Latitude");
-                                locla.setValue(String.valueOf(location.getLatitude()));
-
-                                DatabaseReference loclo = database.getReference("Location->Longitude");
-                                loclo.setValue(String.valueOf(location.getLongitude()));
+                                DatabaseReference loc= database.getReference("Location");
+                                loc.child("Latitude").setValue(String.valueOf(location1.getLatitude()));
+                                loc.child("Longitude").setValue(String.valueOf(location1.getLongitude()));
                             }
                         };
-                        if (ActivityCompat.checkSelfPermission(requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                            return;
-                        }
                         client.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
 
                     }
