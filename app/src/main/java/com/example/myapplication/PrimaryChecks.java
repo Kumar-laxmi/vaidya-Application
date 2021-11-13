@@ -8,15 +8,21 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+
 public class PrimaryChecks extends Fragment{
     Button next_button;                //Creating Button(NEXT) object
     RadioGroup rg1,rg2,rg3,rg5;    //Creating RadioGroup object
+    RadioButton rb1,rb2,rb3,rb5;  //Creating RadioButton Object
     /*
            Here rg1 -> RadioGroup of 1st Question
            Here rg2 -> RadioGroup of 2nd Question
@@ -67,23 +73,91 @@ public class PrimaryChecks extends Fragment{
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Extra_Details");
+        DatabaseReference myRef1 = database.getReference("Question1");
+        DatabaseReference myRef2 = database.getReference("Question2");
+        DatabaseReference myRef3 = database.getReference("Question3");
+        DatabaseReference myRef4 = database.getReference("Question4");
+        DatabaseReference myRef5 = database.getReference("Question5");
+
         view.findViewById(R.id.next_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavHostFragment.findNavController(PrimaryChecks.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
-                int radio1 = rg1.getCheckedRadioButtonId();     //data to DB
-                int radio2 = rg2.getCheckedRadioButtonId();     //DATA TO DB
-                int radio3 = rg3.getCheckedRadioButtonId();     //DATA TO DB
-                int radio5 = rg5.getCheckedRadioButtonId();     //DATA TO DB
+                int radio1 = rg1.getCheckedRadioButtonId();
+                rb1 = (RadioButton) view.findViewById(radio1);
+                int radio2 = rg2.getCheckedRadioButtonId();
+                rb2 = (RadioButton) view.findViewById(radio2);
+                int radio3 = rg3.getCheckedRadioButtonId();
+                rb3 = (RadioButton) view.findViewById(radio3);
+                int radio5 = rg5.getCheckedRadioButtonId();
+                rb5 = (RadioButton) view.findViewById(radio5);
+                boolean check1 = amnesia.isChecked();
+                boolean check2 = headache.isChecked();
+                boolean check3 = lightheadedness.isChecked();
+                boolean check4 = drowsines.isChecked();
+                boolean check5 = rapid_heartbeat.isChecked();
 
-                boolean check1 = amnesia.isChecked();           //DATA TO DB
-                boolean check2 = headache.isChecked();          //DATA TO DB
-                boolean check3 = lightheadedness.isChecked();   //DATA TO DB
-                boolean check4 = drowsines.isChecked();         //DATA TO DB
-                boolean check5 = rapid_heartbeat.isChecked();   //DATA TO DB
+                final EditText[] txtBox = {(EditText) view.findViewById(R.id.text1)};
+                myRef.setValue(txtBox[0].getText().toString());
+                txtBox[0].setText("");
 
-                String txtBox = text1.getText().toString();     //DATA TO DB
+                myRef1.setValue(rb1.getText().toString());
+                rb1.setText("");
+                myRef2.setValue(rb2.getText().toString());
+                rb2.setText("");
+                myRef3.setValue(rb3.getText().toString());
+                rb3.setText("");
+                myRef5.setValue(rb5.getText().toString());
+                rb5.setText("");
+
+                int i=0;
+                if (check1) {
+                    i++;
+                    myRef4.child("Condition-1").setValue("Amnesia");
+                }
+                if (check2){
+                    i++;
+                    if(i==1)
+                        myRef4.child("Condition-1").setValue("Headache");
+                    if (i==2)
+                        myRef4.child("Condition-2").setValue("Headache");
+                }
+                if (check3){
+                    i++;
+                    if(i==1)
+                        myRef4.child("Condition-1").setValue("Lightheadedness");
+                    if (i==2)
+                        myRef4.child("Condition-2").setValue("Lightheadedness");
+                    if (i==3)
+                        myRef4.child("Condition-3").setValue("Lightheadedness");
+                }
+                if (check4){
+                    i++;
+                    if(i==1)
+                        myRef4.child("Condition-1").setValue("Drowsiness");
+                    if (i==2)
+                        myRef4.child("Condition-2").setValue("Drowsiness");
+                    if (i==3)
+                        myRef4.child("Condition-3").setValue("Drowsiness");
+                    if (i==4)
+                        myRef4.child("Condition-4").setValue("Drowsiness");
+                }
+                if (check5){
+                    i++;
+                    if(i==1)
+                        myRef4.child("Condition-1").setValue("Rapid Heartbeat");
+                    if (i==2)
+                        myRef4.child("Condition-2").setValue("Rapid Heartbeat");
+                    if (i==3)
+                        myRef4.child("Condition-3").setValue("Rapid Heartbeat");
+                    if (i==4)
+                        myRef4.child("Condition-4").setValue("Rapid Heartbeat");
+                    if (i==5)
+                        myRef4.child("Condition-5").setValue("Rapid Heartbeat");
+                }
             }
         });
 
