@@ -25,5 +25,3 @@ We could further develop our project by creating a real-time ambulance network. 
 
 ---
 
-
-###### The web applocation is hosted in github-pages and all the code for the mobile application is available in the "APP" folder. Execute the "index.html" in this folder to execute the web app.
