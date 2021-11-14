@@ -31,9 +31,7 @@ We could further develop our project by creating a real-time ambulance network. 
 <table>
   <tr>
     <td>
-      <video width="320" height="240" autoplay muted>
-        <source src="https://youtu.be/_a5a1jUKRKg" type="video/mp4">
-      </video>
+      <a href="https://youtu.be/_a5a1jUKRKg">CLICK HERE TO SEE THE DEMO-WORKING OF THIS VIDEO</a>
     </td>
   </tr>
 </table>
