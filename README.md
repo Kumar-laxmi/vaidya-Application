@@ -26,3 +26,14 @@ A mobile/web application which would share the location of the emergency with th
 We could further develop our project by creating a real-time ambulance network. The admin will then have access to the current location of all ambulances. 
 
 ---
+
+# SUBMITION OF THIS PROJECT
+<table>
+  <tr>
+    <td>
+      <video width="320" height="240" autoplay muted>
+        <source src="https://youtu.be/_a5a1jUKRKg" type="video/mp4">
+      </video>
+    </td>
+  </tr>
+</table>
