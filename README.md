@@ -35,3 +35,5 @@ We could further develop our project by creating a real-time ambulance network. 
     </td>
   </tr>
 </table>
+
+###### The Android Application envolves Front-End Development + Database Support
