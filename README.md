@@ -33,8 +33,10 @@ We could further develop our project by creating a real-time ambulance network. 
 ### Frame-Work:
 - ![Gradle](https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white)
 
-
 ### Database:
 - ![Database](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+
+### OS to use:
+- ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
 
